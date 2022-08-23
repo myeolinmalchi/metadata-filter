@@ -1,12 +1,15 @@
 {
-    "name": "metadata-filter",
-    "version": "0.1.0",
-    "private": true,
+    "name": "myeolinmalchi-metadata-filter",
+    "version": "0.1.12",
+    "private": false,
+    "main": "dist/index.ts",
+    "module": "dist/index.ts",
     "files": ["dist", "README.md"],
     "repository": {
         "type": "git",
-        "url": "url"
+        "url": "https://github.com/myeolinmalchi/metadata-filter.git"
     },
+
     "dependencies": {
         "@testing-library/jest-dom": "^5.16.5",
         "@testing-library/react": "^13.3.0",
@@ -25,7 +28,10 @@
         "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",
-        "eject": "react-scripts eject"
+        "eject": "react-scripts eject",
+        "clean": "rm -rf dist",
+        "compile": "npm run clean && md dist && babel src -d dist --copy-files",
+        "postinstall": "node post-install.js"
     },
     "eslintConfig": {
         "extends": ["react-app", "react-app/jest"]
